@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 
 TIMEOUT = 10
 
+
 def wait(func):
     def wrapper(*args, **kwargs):
         driver = args[0]

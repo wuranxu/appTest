@@ -28,6 +28,4 @@ PORT = 27017
 user = 'yitu8'
 pwd = 'yitu8'
 
-# USERNAME = "18516600716"
-PASSWORD = "123456"
-USERNAME = "15867160449"
+

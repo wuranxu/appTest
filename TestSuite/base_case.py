@@ -10,6 +10,7 @@ from Common.LoginModule import Login
 from Common.mongo_operator import MongoClient
 from Common.RedisModule import Redis
 
+
 class BaseNeedLogin(unittest.TestCase):
 
     case_id = None

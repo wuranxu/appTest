@@ -1,6 +1,5 @@
 __author__ = 'Woody'
 
-
 local_appium = 'http://localhost:4723/wd/hub'
 
 desired_caps_real = {
@@ -20,7 +19,6 @@ desired_caps_vir = {
     "appActivity": ".modles.WelcomeActivity",
     "newCommandTimeout": 200
 
-
 }
 
 HOST = 'localhost'
@@ -28,4 +26,4 @@ PORT = 27017
 user = 'yitu8'
 pwd = 'yitu8'
 
-
+pic_dir = r"E:\AppTest\ErrorPic"

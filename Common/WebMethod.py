@@ -1,8 +1,11 @@
 __author__ = 'Woody'
+
+import logging
 from appium import webdriver
 from appium.webdriver.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
+from Common.AppiumTools import Tools
 
 TIMEOUT = 10
 
@@ -18,6 +21,22 @@ def wait(func):
             func(*args, **kwargs)
         except Exception as err:
             raise Exception("等待元素{}出错!请检查! 错误原因: {}".format(value, str(err)))
+    return wrapper
+
+
+def auto_pic(func):
+    def wrapper(*args, **kwargs):
+        driver = args[0].driver
+        case_id = args[0].case_id
+        try:
+            func(*args, **kwargs)
+        except Exception as err:
+            logging.error("func {} error: {}".format(func.__name__, str(err)))
+            # raise Exception("case_id: {} 运行出错, 详情: {}".format(case_id, str(err)))
+            assert 0, "出错啦啊啊啊啊啊"
+        finally:
+            t = Tools(driver)
+            t.get_pic(case_id)
     return wrapper
 
 

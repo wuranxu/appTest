@@ -14,6 +14,6 @@ if __name__ == "__main__":
     Redis().set("case_num", len(suite._tests))
     runner = unittest.TextTestRunner(resultclass=result)
     rt = runner.run(suite)
-    # print(1)
+    pass
 
 

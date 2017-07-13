@@ -15,4 +15,15 @@ class result(unittest.TextTestResult):
     def addFailure(self, test, err):
         case_id = test.case_id
         if case_id not in self.failures:
-            self.failures.append({case_id: test})
+            self.failures.append({case_id: test, "msg": err})
+
+    def addError(self, test, err):
+        case_id = test.case_id
+        if case_id not in self.errors:
+            self.failures.append({case_id: test, "msg": err})
+
+    def printErrorList(self, flavour, errors):
+        pass
+
+    def printErrors(self):
+        pass

@@ -1,7 +1,11 @@
-Github地址: https://github.com/wuranxu
+
 使用说明
 
+
 1. 安装配置Mongo数据库
+
+
+
 [下载地址](https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.6-signed.msi/download)
 mongo是用来存放元素定位的，截图如下:
 通过case_id区分每个case的元素定位
@@ -10,6 +14,9 @@ mongo是用来存放元素定位的，截图如下:
 ![](http://upload-images.jianshu.io/upload_images/6053915-bfd44479b46c291a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 安装Redis
+
+
+
 因为被墙，所以给个CSDN下载地址
 [戳我下载](http://download.csdn.net/download/chainisit/9400072)
 下载后解压，运行redis-server.exe就行
@@ -20,12 +27,17 @@ mongo是用来存放元素定位的，截图如下:
 
 3. 编写用例
 
+
+
 除了需要登陆的第一个用例(继承于BaseNeedLogin)， 其他的用例都继承于Base类，重写了tearDownClass这类方法。
 编写用例可参照Case002来编写，只需要写test函数就行了，记得带上装饰器(auto_pic），如果需要自动截图的话(现在是报错和正常，结束的时候都会截图)。
 
 ![](http://upload-images.jianshu.io/upload_images/6053915-bfcfc20b72c1b2d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 4. 运行用例
+
+
+
 参照run_case.py文件里头的suite.addTest()方法，先导入用例，然后再run，后期会增加测试报告以及其他方法。
 
 ![](http://upload-images.jianshu.io/upload_images/6053915-5a7c7221985dc239.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

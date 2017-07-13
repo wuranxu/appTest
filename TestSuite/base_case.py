@@ -21,11 +21,12 @@ class BaseNeedLogin(unittest.TestCase):
     # 创建mongo客户端连接
     db = MongoClient()
 
+    '''
     def __new__(cls, *args, **kwargs):
         if not hasattr(cls, 'instance'):
             orig = super(BaseNeedLogin, cls)
             cls.instance = orig.__new__(cls)
-        return cls.instance
+        return cls.instance'''
 
     @classmethod
     def setUpClass(cls):

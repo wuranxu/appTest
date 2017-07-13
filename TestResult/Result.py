@@ -6,21 +6,27 @@ class result(unittest.TextTestResult):
     successes = []
     failures = []
     errors = []
+    skipped = []
 
     def addSuccess(self, test):
         case_id = test.case_id
         if case_id not in self.successes:
-            self.successes.append({case_id: test})
+            self.successes.append({"case_id": case_id, "case": test, "type": "success"})
 
     def addFailure(self, test, err):
         case_id = test.case_id
         if case_id not in self.failures:
-            self.failures.append({case_id: test, "msg": err})
+            self.failures.append({"case_id": case_id, "case": test, "msg": err, "type": "danger"})
 
     def addError(self, test, err):
         case_id = test.case_id
         if case_id not in self.errors:
-            self.failures.append({case_id: test, "msg": err})
+            self.errors.append({"case_id": case_id, "case": test, "msg": err, "type": "warning"})
+
+    def addSkip(self, test, reason):
+        case_id = test.case_id
+        if case_id not in self.skipped:
+            self.skipped.append({"case_id": case_id, "case": test, "msg": reason, "type": "info"})
 
     def printErrorList(self, flavour, errors):
         pass

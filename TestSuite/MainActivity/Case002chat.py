@@ -1,10 +1,14 @@
 __author__ = 'Woody'
-from TestSuite.base_case import Base
+
 import unittest
+from TestSuite.base_case import Base
+from Common.WebMethod import auto_pic
+
 
 
 class Case002(Base):
 
+    @auto_pic
     def test(self):
         self.case_id = self.__class__.__name__
         location = self.db.get_case_location(self.case_id)

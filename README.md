@@ -43,6 +43,14 @@ mongo是用来存放元素定位的，截图如下:
 ![](http://upload-images.jianshu.io/upload_images/6053915-5a7c7221985dc239.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 框架还不完整，会陆续补充更新的。
-app是我们公司自带的， 易途8司导端，账号密码都在mongo数据库里存放了，如果有需要帮忙可以联系我，或者把测试的app改成支付宝这种。
+
+
+
+5. 测试报告截图
+![](http://upload-images.jianshu.io/upload_images/6053915-0086665b61e4bcf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+app是我们公司的易途8司导端，账号密码都在mongo数据库里存放了，如果有需要帮忙可以联系我，或者把测试的app改成支付宝这种。
 
 联系方式： QQ619434176

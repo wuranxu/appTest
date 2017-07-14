@@ -4,9 +4,8 @@ __author__ = 'Woody'
 '''
 
 import unittest
-from Common.WebMethod import driver
+from Common.WebMethod import AppDriver
 from setting import *
-from Common.LoginModule import Login
 from Common.mongo_operator import MongoClient
 from Common.RedisModule import Redis
 
@@ -14,10 +13,8 @@ from Common.RedisModule import Redis
 class BaseNeedLogin(unittest.TestCase):
     case_num = 1
     case_id = None
-    # driver = None
     # 获取driver
-    dr = driver(local_appium, desired_caps_real)
-    driver = Login(dr).driver
+    driver = AppDriver(local_appium, desired_caps_real)
     # 创建mongo客户端连接
     db = MongoClient()
 

@@ -23,14 +23,8 @@ if __name__ == "__main__":
     runner = unittest.TextTestRunner(resultclass=result)
     rt = runner.run(suite)
     html = generate(rt, start)
-    with open("reports/report{}.html".format(datetime.strftime(datetime.now(), "%Y-%m-%d %H-%M-%S")), "w+", encoding="utf-8") as f:
+    with open("reports/report{}.html".format(datetime.strftime(datetime.now(), "%Y-%m-%d %H-%M-%S")), "w", encoding="utf-8") as f:
         f.write(html)
 
-
-
-
-
-
-    pass
 
 

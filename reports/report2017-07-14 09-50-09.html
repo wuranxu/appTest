@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>易途8安卓自动化测试报告</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-capitalize">易途8安卓自动化测试报告</h2>
+                <p class='attribute'><strong>开始时间: </strong>2017-07-14 09:49:04</p>
+                <p class='attribute'><strong>耗费时间: </strong>64.992687</p>
+                <p class='attribute'><strong>测试结果: </strong>成功: 1 失败: 1 出错: 1 跳过: 1</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <table class='table table-hover table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>用例列表</th>
+                            <th>用例描述</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr class='warning'>
+                                <td class="col-xs-2">Case001</td>
+                                <td class="col-xs-5">test_222</td>
+                                <td class="col-xs-2">异常测试</td>
+                                <td class="col-xs-3">
+                                    <span class="label label-warning">
+                                        
+                                            Error
+                                        
+                                    </span>
+                                    
+                                        &nbsp<button class="btn btn-default btn-xs">View</button>
+                                    
+                                </td>
+                            </tr>
+                            
+                                <tr style="display:none;">
+                                    <td class="col-xs-2">详情: </td>
+                                    <td class="col-xs-5">
+                                        <p>(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero',), <traceback object at 0x0488B0D0>)</p>
+                                    </td>
+                                    <td class="col-xs-2"></td>
+                                </tr>
+                            
+                        
+                            <tr class='danger'>
+                                <td class="col-xs-2">Case001</td>
+                                <td class="col-xs-5">test</td>
+                                <td class="col-xs-2">进入我的管理页面</td>
+                                <td class="col-xs-3">
+                                    <span class="label label-danger">
+                                        
+                                            Fail
+                                        
+                                    </span>
+                                    
+                                        &nbsp<button class="btn btn-default btn-xs">View</button>
+                                    
+                                </td>
+                            </tr>
+                            
+                                <tr style="display:none;">
+                                    <td class="col-xs-2">详情: </td>
+                                    <td class="col-xs-5">
+                                        <p>(<class 'AssertionError'>, AssertionError('出错啦啊啊啊啊啊',), <traceback object at 0x048B0D00>)</p>
+                                    </td>
+                                    <td class="col-xs-2"></td>
+                                </tr>
+                            
+                        
+                            <tr class='info'>
+                                <td class="col-xs-2">Case001</td>
+                                <td class="col-xs-5">test_2321</td>
+                                <td class="col-xs-2">跳过测试</td>
+                                <td class="col-xs-3">
+                                    <span class="label label-info">
+                                        
+                                            Skip
+                                        
+                                    </span>
+                                    
+                                        &nbsp<button class="btn btn-default btn-xs">View</button>
+                                    
+                                </td>
+                            </tr>
+                            
+                                <tr style="display:none;">
+                                    <td class="col-xs-2">详情: </td>
+                                    <td class="col-xs-5">
+                                        <p>This is a skipped test.</p>
+                                    </td>
+                                    <td class="col-xs-2"></td>
+                                </tr>
+                            
+                        
+                            <tr class='success'>
+                                <td class="col-xs-2">Case002</td>
+                                <td class="col-xs-5">test</td>
+                                <td class="col-xs-2">司导端进入聊天页面</td>
+                                <td class="col-xs-3">
+                                    <span class="label label-success">
+                                        
+                                            Pass
+                                        
+                                    </span>
+                                    
+                                </td>
+                            </tr>
+                            
+                                <tr style="display:none;">
+                                    <td class="col-xs-2">详情: </td>
+                                    <td class="col-xs-5">
+                                        <p>None</p>
+                                    </td>
+                                    <td class="col-xs-2"></td>
+                                </tr>
+                            
+                        
+                        <tr>
+                            <td>
+                               运行case总数: 4
+                            </td>
+                            <td>
+                                <span>成功: 1 失败: 1 出错: 1 跳过: 1</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('td').on('click', '.btn', function(e){
+                e.preventDefault();
+                var $this = $(this);
+                var $nextRow = $this.closest('tr').next('tr');
+                $nextRow.slideToggle("fast");
+                $this.text(function(i, text){
+                    if (text === 'View') {
+                        return 'Hide';
+                    } else {
+                        return 'View';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

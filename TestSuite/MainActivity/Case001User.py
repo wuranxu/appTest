@@ -4,6 +4,10 @@ from Common.WebMethod import auto_pic
 import unittest
 
 class Case001(BaseNeedLogin):
+    test_des = "进入我的管理页面"
+    test_222_des = "异常测试"
+    test_2321_des = "跳过测试"
+    case_num = 3
 
     @auto_pic
     def test(self):

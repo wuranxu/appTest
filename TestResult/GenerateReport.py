@@ -9,7 +9,7 @@ def generate(result, startTime):
     report_headers = {}
     test_cases = []
     start = startTime.strftime("%Y-%m-%d %H:%M:%S")
-    duration = (datetime.now() - startTime).total_seconds()
+    duration = str(datetime.now() - startTime).split(".")[0]
     status = "成功: {} 失败: {} 出错: {} 跳过: {}".format(
         len(result.successes), len(result.failures),
         len(result.errors), len(result.skipped))
@@ -24,7 +24,8 @@ def generate(result, startTime):
         msg = case.get("msg")
         status = case.get("type")
         case_name = _case._testMethodName
-        test_cases_list.append((case_id, case_name, status, msg))
+        case_des = getattr(_case, _case._testMethodName+"_des")
+        test_cases_list.append((case_id, case_name, status, msg, case_des))
     test_cases_list = sorted(test_cases_list, key=lambda x: x[0])
     total_test = len(test_cases_list)
     with open("templates/report_template.html", encoding="utf-8") as f:

@@ -12,7 +12,7 @@ from Common.RedisModule import Redis
 
 
 class BaseNeedLogin(unittest.TestCase):
-
+    case_num = 1
     case_id = None
     # driver = None
     # 获取driver
@@ -45,7 +45,7 @@ class BaseNeedLogin(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         case_num = int(Redis().get("case_num"))
-        case_num -= 1
+        case_num -= cls.case_num
         Redis().set("case_num", case_num)
         if not case_num:
             if cls.driver:

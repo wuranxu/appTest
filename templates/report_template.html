@@ -21,14 +21,18 @@
                 <table class='table table-hover table-responsive'>
                     <thead>
                         <tr>
+                            <th>编号</th>
                             <th>用例列表</th>
+                            <th>用例描述</th>
                             <th>状态</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for case in test_cases_list %}
                             <tr class='{{case[2]}}'>
-                                <td class="col-xs-9">{{case[1]}}</td>
+                                <td class="col-xs-2">{{ case[0] }}</td>
+                                <td class="col-xs-5">{{ case[1] }}</td>
+                                <td class="col-xs-2">{{ case[4] }}</td>
                                 <td class="col-xs-3">
                                     <span class="label label-{{case[2]}}">
                                         {% if "success" == case[2] %}
@@ -48,9 +52,11 @@
                             </tr>
                             {% if "success" != case[1] %}
                                 <tr style="display:none;">
-                                    <td class="col-xs-9">
+                                    <td class="col-xs-2">详情: </td>
+                                    <td class="col-xs-5">
                                         <p>{{case[3]}}</p>
-                                    </td> 
+                                    </td>
+                                    <td class="col-xs-2"></td>
                                 </tr>
                             {% endif %}
                         {% endfor %}

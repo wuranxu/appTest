@@ -40,7 +40,7 @@ def auto_pic(func):
     return wrapper
 
 
-class driver(webdriver.Remote):
+class AppDriver(webdriver.Remote):
 
     def id_find(self, _id):
         return self.find_element_by_id(_id)

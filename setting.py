@@ -27,3 +27,5 @@ user = 'yitu8'
 pwd = 'yitu8'
 
 pic_dir = r"E:\AppTest\ErrorPic"
+
+

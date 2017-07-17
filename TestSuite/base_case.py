@@ -8,36 +8,31 @@ from Common.WebMethod import AppDriver
 from setting import *
 from Common.mongo_operator import MongoClient
 from Common.RedisModule import Redis
+from appium import webdriver
 
 
 class BaseNeedLogin(unittest.TestCase):
     case_num = 1
     case_id = None
     # 获取driver
-    driver = AppDriver(local_appium, desired_caps_real)
+    driver = webdriver.Remote(local_appium, desired_caps_real)
     # 创建mongo客户端连接
     db = MongoClient()
-
-    '''
-    def __new__(cls, *args, **kwargs):
-        if not hasattr(cls, 'instance'):
-            orig = super(BaseNeedLogin, cls)
-            cls.instance = orig.__new__(cls)
-        return cls.instance'''
+    login_case = "Case000"
+    driver = AppDriver(driver, location=db.get_case_location(login_case))
 
     @classmethod
     def setUpClass(cls):
-        login_case = "Case000"
         cls.case_id = cls.__name__
         # 获取case元素定位信息
-        location = cls.db.get_case_location(login_case)
         # 模拟登陆
-        cls.driver.click_text(**location.get("系统权限允许按钮"))
-        cls.driver.click_text(**location.get("系统权限允许按钮"))
-        cls.driver.click(**location.get("欢迎页-跳过按钮"))
-        cls.driver.send(**location.get("首页-用户名输入框"))
-        cls.driver.send(**location.get("首页-密码输入框"))
-        cls.driver.click(**location.get("首页-登录按钮"))
+        cls.driver.click_text("系统权限允许按钮")
+        cls.driver.click_text("系统权限允许按钮")
+        cls.driver.click("欢迎页-跳过按钮")
+        cls.driver.send("首页-用户名输入框")
+        cls.driver.send("首页-密码输入框")
+        cls.driver.click("首页-登录按钮")
+        cls.location = cls.db.get_case_location(cls.case_id)
 
     @classmethod
     def tearDownClass(cls):
@@ -55,7 +50,8 @@ class Base(BaseNeedLogin):
 
     @classmethod
     def setUpClass(cls):
-        pass
+        cls.case_id = cls.__name__
+        cls.location = cls.db.get_case_location(cls.case_id)
 
 
 

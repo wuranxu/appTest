@@ -19,12 +19,12 @@ def generate(result, startTime):
     test_cases.extend(result.successes)
     test_cases.extend(result.skipped)
     for case in test_cases:
-        case_id = case.get("case_id")
+        case_id = case.get("case_id", "Case000")
         _case = case.get("case")
         msg = case.get("msg")
         status = case.get("type")
-        case_name = _case._testMethodName
-        case_des = getattr(_case, _case._testMethodName+"_des")
+        case_name = getattr(_case, "_testMethodName", "初始化模块")
+        case_des = getattr(_case, case_name+"_des", "登陆易途8司导端")
         test_cases_list.append((case_id, case_name, status, msg, case_des))
     test_cases_list = sorted(test_cases_list, key=lambda x: x[0])
     total_test = len(test_cases_list)

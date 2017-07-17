@@ -19,9 +19,12 @@ class result(unittest.TextTestResult):
             self.failures.append({"case_id": case_id, "case": test, "msg": err, "type": "danger"})
 
     def addError(self, test, err):
-        case_id = test.case_id
-        if case_id not in self.errors:
-            self.errors.append({"case_id": case_id, "case": test, "msg": err, "type": "warning"})
+        try:
+            case_id = test.case_id
+            if case_id not in self.errors:
+                self.errors.append({"case_id": case_id, "case": test, "msg": err, "type": "warning"})
+        except:
+            self.errors.append({"case_id": test.description, "case": test, "msg": err, "type": "warning"})
 
     def addSkip(self, test, reason):
         case_id = test.case_id
